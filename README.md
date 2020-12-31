@@ -3,7 +3,7 @@
 
 # @dizmo/generator-component
 
-> Generator JavaScript [web components]
+> A Generator for JavaScript [web components]
 
 ## Prerequisites
 
@@ -22,19 +22,19 @@ npm install -g @dizmo/generator-component
 ## Help
 
 ```sh
-yo @dizmo/module --help
+yo @dizmo/component --help
 ```
 
 ## Generation
 
 ```sh
-yo @dizmo/module [--git]
+yo @dizmo/component [--git]
 ```
 
 ## Upgrade
 
 ```sh
-yo @dizmo/module --upgrade
+yo @dizmo/component --upgrade
 ```
 
 ## Development
