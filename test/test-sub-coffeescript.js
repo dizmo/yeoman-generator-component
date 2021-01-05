@@ -2,11 +2,12 @@ const assert = require('yeoman-assert');
 const { run } = require('yeoman-test');
 const { join } = require('path');
 
-describe('generator-component:app', function () {
+describe('generator-component:sub-coffeescript', function () {
     const generator = join(__dirname, '../generators/app');
-    it('yo @dizmo/component', () => {
+    it('yo @dizmo/component --coffeescript', () => {
         return run(generator).withOptions({
             'author': 'Dizmo Developer',
+            'coffeescript': true,
             'email': 'developer@dizmo.com',
             'url': 'https://www.dizmo.com/developer'
         }).then(() => {
@@ -20,14 +21,14 @@ describe('generator-component:app', function () {
                 'cli/run-prepack.js',
                 'cli/run-test.js',
                 'cli/run-utils.js',
+                'coffeelint.json',
                 'docs/.gitignore',
                 'dist',
                 'dist/.gitignore',
                 'dist/.npmignore',
-                '.eslintrc.json',
                 'jsdoc.json',
                 'lib',
-                'lib/index.js',
+                'lib/index.coffee',
                 'lib/styles',
                 'lib/styles/styles.scss',
                 'LICENSE',
@@ -35,7 +36,7 @@ describe('generator-component:app', function () {
                 'package.json',
                 'README.md',
                 'test',
-                'test/test.js',
+                'test/test.coffee',
                 '.travis.yml',
                 'webpack.config.js',
                 '.yo-rc.json'
@@ -61,13 +62,23 @@ describe('generator-component:app', function () {
                     '@babel/plugin-transform-runtime': '^7.12.10',
                     '@babel/preset-env': '^7.12.11',
                     'chai': '^4.2.0',
+                    'coffeelint': '2.1.0',
+                    'coffeescript': '^2.5.1',
                     'coveralls': '^3.1.0',
-                    'eslint': '^7.17.0',
+                    'css-loader': '^5.0.1',
+                    'fs-extra': '^9.0.1',
+                    'ignore-styles': '^5.0.1',
                     'jsdoc': '^3.6.6',
+                    'jsdom': '16.4.0',
+                    'jsdom-global': '3.0.2',
                     'minami': '^1.2.3',
                     'mocha': '^8.2.1',
                     'nyc': '^15.1.0',
+                    'sass': '^1.32.0',
+                    'sass-loader': '^10.1.0',
                     'source-map-loader': '^2.0.0',
+                    'style-loader': '^2.0.0',
+                    'tmp': '^0.2.1',
                     'webpack': '^5.11.1',
                     'webpack-cli': '^4.3.1',
                     'yargs': '^16.2.0'
@@ -98,7 +109,7 @@ describe('generator-component:app', function () {
             });
         });
     });
-    it('yo @dizmo/module --git', () => {
+    it('yo @dizmo/component --git --coffeescript', () => {
         return run(generator).withOptions({
             'author': 'Dizmo Developer',
             'email': 'developer@dizmo.com',

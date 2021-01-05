@@ -72,6 +72,30 @@ const SubGenerator = (args, opts) => class extends Generator {
         this.conflicter.force = this.options.force || upgrade;
     }
     end() {
+        const pkg = this.fs.readJSON(
+            this.destinationPath('package.json')
+        );
+        if (!this.options['typescript'] && this.options.upgrade && pkg.devDependencies['coffeescript'] ||
+            !this.options['typescript'] && this.options['coffeescript']
+        ) {
+            this.composeWith(require.resolve(
+                '../sub-coffeescript'
+            ), lodash.assign(this.options, {
+                args: this.args, force: true
+            }));
+            return;
+        }
+        if (
+            !this.options['coffeescript'] && this.options.upgrade && pkg.devDependencies['typescript'] ||
+            !this.options['coffeescript'] && this.options['typescript']
+        ) {
+            this.composeWith(require.resolve(
+                '../sub-typescript'
+            ), lodash.assign(this.options, {
+                args: this.args, force: true
+            }));
+            return;
+        }
     }
 };
 function sort(object) {
