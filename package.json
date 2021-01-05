@@ -20,7 +20,8 @@
     "yeoman-test": "^4.0.0"
   },
   "files": [
-    "generators/app"
+    "generators/app",
+    "generators/sub-coffeescript"
   ],
   "homepage": "https://github.com/dizmo/yeoman-generator-component",
   "keywords": [
@@ -28,7 +29,7 @@
     "component",
     "generator",
     "javascript",
-    "dizmoMod"
+    "coffescript"
   ],
   "license": "ISC",
   "name": "@dizmo/generator-component",
