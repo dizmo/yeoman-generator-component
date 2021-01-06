@@ -28,7 +28,7 @@ yo @dizmo/component --help
 ## Generation
 
 ```sh
-yo @dizmo/component [--git]
+yo @dizmo/component [--git] [--coffeescript|--typescript]
 ```
 
 ## Upgrade
