@@ -3,7 +3,7 @@
 
 # @dizmo/generator-component
 
-> A generator for JavaScript and CoffeeScript [web components]
+> A generator for JavaScript, CoffeeScript anbd TypeScript [web components]
 
 ## Prerequisites
 
