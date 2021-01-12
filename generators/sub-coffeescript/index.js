@@ -14,14 +14,6 @@ module.exports = class extends Generator {
             this.destinationPath('package.json')
         );
         if (!upgrade || upgrade) {
-            const pkg = this.fs.readJSON(
-                this.destinationPath('package.json')
-            );
-            this.fs.copyTpl(
-                this.templatePath('cli/'),
-                this.destinationPath('cli/'), pkg);
-        }
-        if (!upgrade || upgrade) {
             pkg.devDependencies = sort(
                 lodash.assign(pkg.devDependencies, {
                     'coffeelint': '2.1.0',
@@ -32,6 +24,11 @@ module.exports = class extends Generator {
             if (pkg.devDependencies['eslint']) {
                 delete pkg.devDependencies['eslint'];
             }
+        }
+        if (!upgrade || upgrade) {
+            this.fs.copyTpl(
+                this.templatePath('cli/'),
+                this.destinationPath('cli/'), { ...pkg, _: require('lodash') });
         }
         if (!upgrade) {
             this.fs.copyTpl(

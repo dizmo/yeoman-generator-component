@@ -54,6 +54,8 @@ const SubGenerator = (args, opts) => class extends Generator {
             this.fs.copyTpl(
                 this.templatePath('cli/'),
                 this.destinationPath('cli/'), { ...pkg, _: require('lodash') });
+        }
+        if (!upgrade) {
             this.fs.copyTpl(
                 this.templatePath('lib/'),
                 this.destinationPath('lib/'), { ...pkg, _: require('lodash') });
@@ -61,7 +63,7 @@ const SubGenerator = (args, opts) => class extends Generator {
                 this.templatePath('test/'),
                 this.destinationPath('test/'), { ...pkg, _: require('lodash') });
         }
-        if (!upgrade || upgrade) {
+        if (!upgrade) {
             this.fs.copy(
                 this.templatePath('webpack.config.js'),
                 this.destinationPath('webpack.config.js'));
