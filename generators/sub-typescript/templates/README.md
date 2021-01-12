@@ -64,7 +64,7 @@ module.exports = {
 **index.html**:
 ```html
 <head>
-  <script src="./lib/<%= name_suffix %>/dist/index.min.js"></script>
+  <script src="./lib/<%= name_suffix %>/dist/lib/index.min.js"></script>
 </head>
 <body>
   <<%= name_suffix %> class="<%= name_suffix %>"></<%= name_suffix %>>
