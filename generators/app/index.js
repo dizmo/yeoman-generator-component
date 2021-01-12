@@ -33,22 +33,6 @@ const SubGenerator = (args, opts) => class extends Generator {
             this.destinationPath('package.json')
         );
         if (!upgrade || upgrade) {
-            this.fs.copyTpl(
-                this.templatePath('cli/'),
-                this.destinationPath('cli/'), { ...pkg, _: require('lodash') });
-            this.fs.copyTpl(
-                this.templatePath('lib/'),
-                this.destinationPath('lib/'), { ...pkg, _: require('lodash') });
-            this.fs.copyTpl(
-                this.templatePath('test/'),
-                this.destinationPath('test/'), { ...pkg, _: require('lodash') });
-        }
-        if (!upgrade || upgrade) {
-            this.fs.copy(
-                this.templatePath('webpack.config.js'),
-                this.destinationPath('webpack.config.js'));
-        }
-        if (!upgrade || upgrade) {
             pkg.dependencies = sort(
                 lodash.assign(pkg.dependencies, {
                 })
@@ -65,6 +49,22 @@ const SubGenerator = (args, opts) => class extends Generator {
                     'style-loader': '^2.0.0'
                 })
             );
+        }
+        if (!upgrade || upgrade) {
+            this.fs.copyTpl(
+                this.templatePath('cli/'),
+                this.destinationPath('cli/'), { ...pkg, _: require('lodash') });
+            this.fs.copyTpl(
+                this.templatePath('lib/'),
+                this.destinationPath('lib/'), { ...pkg, _: require('lodash') });
+            this.fs.copyTpl(
+                this.templatePath('test/'),
+                this.destinationPath('test/'), { ...pkg, _: require('lodash') });
+        }
+        if (!upgrade || upgrade) {
+            this.fs.copy(
+                this.templatePath('webpack.config.js'),
+                this.destinationPath('webpack.config.js'));
         }
         if (!upgrade) {
             this.fs.copyTpl(
