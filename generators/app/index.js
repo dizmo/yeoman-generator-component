@@ -35,13 +35,13 @@ const SubGenerator = (args, opts) => class extends Generator {
         if (!upgrade || upgrade) {
             this.fs.copyTpl(
                 this.templatePath('cli/'),
-                this.destinationPath('cli/'), this.properties);
-            this.fs.copy(
+                this.destinationPath('cli/'), { ...pkg, _: require('lodash') });
+            this.fs.copyTpl(
                 this.templatePath('lib/'),
-                this.destinationPath('lib/'));
-            this.fs.copy(
+                this.destinationPath('lib/'), { ...pkg, _: require('lodash') });
+            this.fs.copyTpl(
                 this.templatePath('test/'),
-                this.destinationPath('test/'));
+                this.destinationPath('test/'), { ...pkg, _: require('lodash') });
         }
         if (!upgrade || upgrade) {
             this.fs.copy(
@@ -64,6 +64,14 @@ const SubGenerator = (args, opts) => class extends Generator {
                     'sass-loader': '^10.1.0',
                     'style-loader': '^2.0.0'
                 })
+            );
+        }
+        if (!upgrade) {
+            this.fs.copyTpl(
+                this.templatePath('README.md'),
+                this.destinationPath('README.md'), {
+                    ...pkg, year: new Date().getFullYear(), _: require('lodash')
+                }
             );
         }
         this.fs.writeJSON(

@@ -1,7 +1,10 @@
-.my-component {
+<%_ name_prefix = name[0] === '@' ? name.slice(1).split('/')[0] : name.split('/')[0] _%>
+<%_ name_suffix = name[0] === '@' ? name.slice(1).split('/').pop() : name.split('/').pop() _%>
+<%_ name_ucamel = _.upperFirst(_.camelCase(name_suffix)) _%>
+.<%= name_suffix %> {
     background-color: gray;
 }
-.my-component {
+.<%= name_suffix %> {
     align-items: center;
     display: flex;
     height: 100%;
@@ -11,6 +14,6 @@
     top: 0;
     width: 100%;
 }
-.my-componentk-hidden {
+.<%= name_suffix %>-hidden {
     display: none;
 }
