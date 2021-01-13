@@ -23,7 +23,7 @@ npm install <%= name %> --save
 import { <%= name_ucamel %> } from '<%= name %>';
 ```
 
-### Example Integration via Webpack
+### Example integration via webpack
 
 **index.html**:
 ```html
@@ -59,7 +59,7 @@ module.exports = {
 
 ..where including the `<%= name %>` entry takes care of _both_ the component's script _and_ default stylesheets.
 
-### Example Integration via a `<script>` Tag
+### Example integration via a `<script>` tag
 
 **index.html**:
 ```html

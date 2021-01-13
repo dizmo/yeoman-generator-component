@@ -81,7 +81,7 @@ describe('generator-module:sub-typescript', function () {
                     'dist/lib'
                 ],
                 'keywords': [
-                    'module'
+                    'component', 'module'
                 ],
                 'license': 'ISC',
                 'main': 'dist/lib/index.js',

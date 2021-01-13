@@ -1,11 +1,9 @@
 'use strict';
 
-const chalk = require('chalk');
 const fs = require('fs');
 const Generator = require('yeoman-generator');
 const lodash = require('lodash');
 const process = require('process');
-const yosay = require('yosay');
 
 module.exports = class extends Generator {
     constructor(args, opts) {
@@ -104,6 +102,14 @@ const SubGenerator = (args, opts) => class extends Generator {
                     _: require('lodash')
                 }
             );
+        }
+        if (!upgrade) {
+            if (pkg.keywords instanceof Array) {
+                pkg.keywords.unshift('component')
+            } else {
+                pkg.keywords = ['component', 'module'];
+            }
+            pkg.keywords = lodash.uniq(pkg.keywords).sort();
         }
         this.fs.writeJSON(
             this.destinationPath('package.json'), pkg, null, 2

@@ -87,7 +87,7 @@ describe('generator-component:sub-coffeescript', function () {
                     'dist/lib'
                 ],
                 'keywords': [
-                    'module'
+                    'component', 'module'
                 ],
                 'license': 'ISC',
                 'main': 'dist/lib/index.js',
