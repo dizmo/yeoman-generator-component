@@ -55,7 +55,7 @@ describe('generator-component:sub-coffeescript', function () {
                     }
                 ],
                 'dependencies': {},
-                'description': 'module',
+                'description': 'web component',
                 'devDependencies': {
                     '@babel/cli': '^7.12.10',
                     '@babel/core': '^7.12.10',
@@ -91,7 +91,7 @@ describe('generator-component:sub-coffeescript', function () {
                 ],
                 'license': 'ISC',
                 'main': 'dist/lib/index.js',
-                'name': '@dizmo/my-module',
+                'name': '@dizmo/my-component',
                 'repository': {
                     'type': 'git',
                     'url': ''

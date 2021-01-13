@@ -54,7 +54,7 @@ describe('generator-module:sub-typescript', function () {
                     }
                 ],
                 'dependencies': {},
-                'description': 'module',
+                'description': 'web component',
                 'devDependencies': {
                     '@babel/cli': '^7.12.10',
                     '@babel/core': '^7.12.10',
@@ -85,7 +85,7 @@ describe('generator-module:sub-typescript', function () {
                 ],
                 'license': 'ISC',
                 'main': 'dist/lib/index.js',
-                'name': '@dizmo/my-module',
+                'name': '@dizmo/my-component',
                 'repository': {
                     'type': 'git',
                     'url': ''

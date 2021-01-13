@@ -1,16 +1,35 @@
 'use strict';
 
+const chalk = require('chalk');
 const fs = require('fs');
 const Generator = require('yeoman-generator');
 const lodash = require('lodash');
+const process = require('process');
+const yosay = require('yosay');
 
 module.exports = class extends Generator {
+    constructor(args, opts) {
+        super(args, opts);
+        this.argument('name', {
+            defaults: '@dizmo/my-component',
+            required: false,
+            type: String
+        });
+        this.option('description', {
+            desc: 'Short one-liner describing the component',
+            type: String
+        });
+    }
     initializing() {
         this.composeWith(require.resolve(
             '@dizmo/generator-module/generators/app'
         ), {
             arguments: this.arguments, ...this.options,
-            typescript: undefined, coffeescript: undefined
+            typescript: undefined, coffeescript: undefined,
+            prompts: {
+                description: { default: 'web component' },
+                yosay: 'dizmo component'
+            }
         });
         this.composeWith({
             Generator: SubGenerator(this.arguments, this.options),
