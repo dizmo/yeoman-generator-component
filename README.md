@@ -3,7 +3,9 @@
 
 # @dizmo/generator-component
 
-> A generator for JavaScript, CoffeeScript anbd TypeScript [web components]
+> A generator for JavaScript, CoffeeScript and TypeScript [web components]
+
+Generates [NPM] compatible [web components]' projects that can be published, installed and even upgraded. The supported development steps are cleaning, linting, building (including bundling) and testing (including coverage statistics).
 
 ## Prerequisites
 
@@ -128,4 +130,5 @@ npm publish --access=public
  © [dizmo AG](http://dizmo.com/), Switzerland
 
 [Node.js]: https://nodejs.org
+[NPM]: https://www.npmjs.com
 [web components]: https://developer.mozilla.org/en-US/docs/Web/Web_Components
