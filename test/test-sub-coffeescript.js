@@ -75,7 +75,7 @@ describe('generator-component:sub-coffeescript', function () {
                     'mocha': '^8.2.1',
                     'nyc': '^15.1.0',
                     'sass': '^1.32.0',
-                    'sass-loader': '^10.1.0',
+                    'sass-loader': '^11.0.1',
                     'source-map-loader': '^2.0.0',
                     'style-loader': '^2.0.0',
                     'tmp': '^0.2.1',

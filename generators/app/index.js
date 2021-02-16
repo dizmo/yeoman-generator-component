@@ -62,7 +62,7 @@ const SubGenerator = (args, opts) => class extends Generator {
                     'jsdom': '16.4.0',
                     'jsdom-global': '3.0.2',
                     'sass': '^1.32.0',
-                    'sass-loader': '^10.1.0',
+                    'sass-loader': '^11.0.1',
                     'style-loader': '^2.0.0'
                 })
             );
