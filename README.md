@@ -9,7 +9,7 @@ Generates [NPM] compatible [web components]' projects that can be published, ins
 
 ## Prerequisites
 
-* [Node.js] v14.15.3 LTS (or higher); for Linux distribution based packages (`deb` or `rpm`) see also [binary distributions](https://github.com/nodesource/distributions).
+* [Node.js] v14.15.5 LTS (or higher); for Linux distribution based packages (`deb` or `rpm`) see also [binary distributions](https://github.com/nodesource/distributions).
 
 ## Installation
 
