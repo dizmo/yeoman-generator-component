@@ -5,7 +5,7 @@
     "url": "https://github.com/hsk81"
   },
   "dependencies": {
-    "@dizmo/generator-module": "^2.4.21",
+    "@dizmo/generator-module": "^2.4.22",
     "chalk": "^4.1.0",
     "lodash": "^4.17.20",
     "rimraf": "^3.0.2",
