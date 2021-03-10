@@ -7,15 +7,12 @@ import { expect } from 'chai';
 
 describe('<%= name_ucamel %>', () => {
     it('should exist', () => {
-        const clazz = window.customElements.get('<%= name_suffix %>');
-        expect(clazz).to.not.be.an('undefined');
+        expect(<%= name_ucamel %>).to.not.be.an('undefined');
     });
     it('should be a function', () => {
-        const clazz = window.customElements.get('<%= name_suffix %>');
-        expect(clazz).to.be.a('function');
+        expect(<%= name_ucamel %>).to.be.a('function');
     });
     it('should be a instantiable', () => {
-        const clazz = window.customElements.get('<%= name_suffix %>');
-        expect(new clazz()).to.be.instanceOf(<%= name_ucamel %>);
+        expect(new <%= name_ucamel %>()).to.be.instanceOf(<%= name_ucamel %>);
     });
 });
