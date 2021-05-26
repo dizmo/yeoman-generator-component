@@ -19,7 +19,7 @@ module.exports = class extends Generator {
         });
     }
     initializing() {
-        this.composeWith(require.resolve(
+        const app = this.composeWith(require.resolve(
             '@dizmo/generator-module/generators/app'
         ), {
             arguments: this.arguments, ...this.options,
@@ -30,17 +30,17 @@ module.exports = class extends Generator {
             }
         });
         this.composeWith({
-            Generator: SubGenerator(this.arguments, this.options),
+            Generator: SubGenerator(this.arguments, this.options)(app),
             path: require.resolve('.')
         });
     }
 }
-const SubGenerator = (args, opts) => class extends Generator {
+const SubGenerator = (args, opts) => (app) => class extends Generator {
     constructor() {
         super(args, opts);
     }
     configuring() {
-        this.destinationRoot(process.cwd());
+        this.destinationRoot(app.destinationRoot());
     }
     writing() {
         const upgrade = Boolean(
@@ -114,7 +114,7 @@ const SubGenerator = (args, opts) => class extends Generator {
         this.fs.writeJSON(
             this.destinationPath('package.json'), pkg, null, 2
         );
-        this.conflicter.force = this.options.force || upgrade;
+        this.env.conflicter.force = this.options.force || upgrade;
     }
     end() {
         const pkg = this.fs.readJSON(
