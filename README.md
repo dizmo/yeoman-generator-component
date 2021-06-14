@@ -36,6 +36,10 @@ yo @dizmo/component [--git] [--coffeescript|--typescript]
 ## Upgrade
 
 ```sh
+npm upgrade -g @dizmo/generator-component
+```
+
+```sh
 yo @dizmo/component --upgrade
 ```
 
