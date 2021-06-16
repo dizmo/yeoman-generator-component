@@ -111,6 +111,38 @@ npm run cover
 npm run -- cover --no-lint --no-clean --no-build
 ```
 
+## Debugging
+
+Connect `my-component` to another project:
+
+```sh
+[my-component] $ npm link # symlink global:my-component
+```
+
+```sh
+[a-project] $ npm link a-module # symlink node-modules:my-component
+```
+
+```sh
+[a-project] $ head webpack.config.js # ensure my-component in entry.main
+```
+
+```
+entry: {
+    main: [..., 'my-component', './source/index.js']
+}
+```
+
+Disconnect `my-component` from the project:
+
+```sh
+[a-project] $ npm unlink my-component # delete local symlink
+```
+
+```sh
+[my-component] $ npm uninstall -g # delete global symlink
+```
+
 ## Documentation
 
 ```sh
