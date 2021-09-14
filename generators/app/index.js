@@ -56,14 +56,14 @@ const SubGenerator = (args, opts) => (app) => class extends Generator {
             );
             pkg.devDependencies = sort(
                 lodash.assign(pkg.devDependencies, {
-                    'css-loader': '^5.2.6',
+                    'css-loader': '^6.2.0',
                     'fs-extra': '^10.0.0',
                     'ignore-styles': '^5.0.1',
-                    'jsdom': '16.6.0',
+                    'jsdom': '17.0.0',
                     'jsdom-global': '3.0.2',
-                    'sass': '^1.34.1',
+                    'sass': '^1.40.1',
                     'sass-loader': '^12.1.0',
-                    'style-loader': '^2.0.0'
+                    'style-loader': '^3.2.1'
                 })
             );
         }
