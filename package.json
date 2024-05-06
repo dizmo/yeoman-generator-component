@@ -37,7 +37,7 @@
   "name": "@dizmo/generator-component",
   "repository": {
     "type": "git",
-    "url": "git@github.com:dizmo/yeoman-generator-component"
+    "url": "git+ssh://git@github.com/dizmo/yeoman-generator-component.git"
   },
   "scripts": {
     "test": "npx mocha test --recursive"
